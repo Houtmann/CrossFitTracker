@@ -26,7 +26,7 @@ class TypeOf(models.Model):
         self.name = self.name.upper()
 
 class Skill(models.Model):
-    type = models.ForeignKey(TypeOf)
+    type = models.ForeignKey(TypeOf, on_delete=models.PROTECT)
     mouvements = models.ManyToManyField(Mouvement)
 
 
